@@ -16,16 +16,16 @@
   <meta name="author" content="Xiao Luo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一个有UI界面的小型咖啡管理系统">
+    <meta name="description" content="一个有UI界面的小型咖啡管理系统，同时也是第十二次作业">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GUI咖啡小系统的完整代码">
 <meta property="og:url" content="http://example.com/2022/05/28/GUI%E5%92%96%E5%95%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="BLuog">
-<meta property="og:description" content="一个有UI界面的小型咖啡管理系统">
+<meta property="og:description" content="一个有UI界面的小型咖啡管理系统，同时也是第十二次作业">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/Random(15).jpg">
 <meta property="article:published_time" content="2022-05-28T00:54:12.446Z">
-<meta property="article:modified_time" content="2022-05-29T10:21:54.566Z">
+<meta property="article:modified_time" content="2022-05-29T16:11:33.940Z">
 <meta property="article:author" content="Xiao Luo">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="作业">
@@ -309,22 +309,37 @@
             
             <div class="markdown-body">
               
-              <h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><ul>
-<li>Coffee</li>
-<li>CoffeeBrewer</li>
-<li>Product</li>
-<li>Order</li>
-<li>OrderItem</li>
-<li>Sales</li>
-<li>SalesFormatter</li>
-<li>Catalog</li>
-<li>CatalogLoader</li>
-<li>FileCatalogLoader</li>
-<li>DataFormatException</li>
-<li>PlainTextSalesFormatter</li>
-<li>HTMLSalesFormatter</li>
-<li>XMLSalesFormatter</li>
-<li>GourmetCoffeeGUI</li>
+              <h2 id="若为交作业，仅需提交GourmetCoffee-java文件"><a href="#若为交作业，仅需提交GourmetCoffee-java文件" class="headerlink" title="若为交作业，仅需提交GourmetCoffee.java文件"></a><em>若为交作业，仅需提交GourmetCoffee.java文件</em></h2><h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><ul>
+<li><p>Coffee</p>
+</li>
+<li><p>CoffeeBrewer</p>
+</li>
+<li><p>Product</p>
+</li>
+<li><p>Order</p>
+</li>
+<li><p>OrderItem</p>
+</li>
+<li><p>Sales</p>
+</li>
+<li><p>SalesFormatter</p>
+</li>
+<li><p>Catalog</p>
+</li>
+<li><p>CatalogLoader</p>
+</li>
+<li><p>FileCatalogLoader</p>
+</li>
+<li><p>DataFormatException</p>
+</li>
+<li><p>PlainTextSalesFormatter</p>
+</li>
+<li><p>HTMLSalesFormatter</p>
+</li>
+<li><p>XMLSalesFormatter</p>
+</li>
+<li><p>GourmetCoffeeGUI <code>（仅需提交这个类）</code></p>
+</li>
 </ul>
 <p>系统使用的catalog.dat文件在压缩包内</p>
 <h2 id="Coffee"><a href="#Coffee" class="headerlink" title="Coffee"></a>Coffee</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.BorderLayout;<br><span class="hljs-keyword">import</span> java.awt.GridLayout;<br><span class="hljs-keyword">import</span> javax.swing.JLabel;<br><span class="hljs-keyword">import</span> javax.swing.JPanel;<br><span class="hljs-keyword">import</span> javax.swing.JTextField;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coffee</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Product</span> &#123;<br>    <span class="hljs-keyword">private</span> String origin;<br>    <span class="hljs-keyword">private</span> String roast;<br>    <span class="hljs-keyword">private</span> String flavor;<br>    <span class="hljs-keyword">private</span> String aroma;<br>    <span class="hljs-keyword">private</span> String acidity;<br>    <span class="hljs-keyword">private</span> String body;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Coffee</span><span class="hljs-params">(String var1, String var2, <span class="hljs-type">double</span> var3, String var5, String var6, String var7, String var8, String var9, String var10)</span> &#123;<br>        <span class="hljs-built_in">super</span>(var1, var2, var3);<br>        <span class="hljs-built_in">this</span>.origin = var5;<br>        <span class="hljs-built_in">this</span>.roast = var6;<br>        <span class="hljs-built_in">this</span>.flavor = var7;<br>        <span class="hljs-built_in">this</span>.aroma = var8;<br>        <span class="hljs-built_in">this</span>.acidity = var9;<br>        <span class="hljs-built_in">this</span>.body = var10;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getOrigin</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.origin;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getRoast</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.roast;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getFlavor</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.flavor;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getAroma</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.aroma;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getAcidity</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.acidity;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getBody</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.body;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.toString() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getOrigin() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getRoast() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getFlavor() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getAroma() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getAcidity() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getBody();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> JPanel <span class="hljs-title function_">getPanel</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getCode());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getDescription());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(Double.toString(<span class="hljs-built_in">this</span>.getPrice()));<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getOrigin());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var6</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getRoast());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var7</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getFlavor());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var8</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getAroma());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var9</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getAcidity());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var10</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getBody());<br>        var2.setEditable(<span class="hljs-literal">false</span>);<br>        var3.setEditable(<span class="hljs-literal">false</span>);<br>        var4.setEditable(<span class="hljs-literal">false</span>);<br>        var5.setEditable(<span class="hljs-literal">false</span>);<br>        var6.setEditable(<span class="hljs-literal">false</span>);<br>        var7.setEditable(<span class="hljs-literal">false</span>);<br>        var8.setEditable(<span class="hljs-literal">false</span>);<br>        var9.setEditable(<span class="hljs-literal">false</span>);<br>        var10.setEditable(<span class="hljs-literal">false</span>);<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var11</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Code:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Description: &quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Price:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Origin:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Roast:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Flavor:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Aroma:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Acidity:&quot;</span>));<br>        var11.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Body:&quot;</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var12</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>));<br>        var12.add(var2);<br>        var12.add(var3);<br>        var12.add(var4);<br>        var12.add(var5);<br>        var12.add(var6);<br>        var12.add(var7);<br>        var12.add(var8);<br>        var12.add(var9);<br>        var12.add(var10);<br>        var1.add(var11, <span class="hljs-string">&quot;West&quot;</span>);<br>        var1.add(var12, <span class="hljs-string">&quot;East&quot;</span>);<br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
@@ -473,6 +488,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/05/29/%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/" title="第十一次作业">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第十一次作业</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
