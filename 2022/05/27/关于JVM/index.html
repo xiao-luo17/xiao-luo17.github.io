@@ -72,6 +72,7 @@
 <link rel="stylesheet" href="/css/fluid-extension.css">
 <link rel="stylesheet" href="/css/scrollAnimation.css">
 <link rel="stylesheet" href="/css/scrollAnimation.css">
+<link rel="stylesheet" href="/iconfont/font_01/iconfont.css">
 
 
 
@@ -173,7 +174,7 @@
           
             <li class="nav-item">
               <a class="nav-link" href="/thanks/">
-                
+                <i class="iconfont icon-rcd-heart"></i>
                 感谢
               </a>
             </li>
@@ -417,6 +418,34 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.4.17/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-phi-fawn.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -701,6 +730,7 @@
   
 <script src="/js/sakura.js"></script>
 <script src="/js/scrollAnimation.js"></script>
+<script src="/iconfont/font_01/iconfont.js"></script>
 
 
 

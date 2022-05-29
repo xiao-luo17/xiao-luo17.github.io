@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/Random(30).jpg">
 <meta property="article:published_time" content="2022-05-26T12:49:38.327Z">
-<meta property="article:modified_time" content="2022-05-27T17:52:09.605Z">
+<meta property="article:modified_time" content="2022-05-29T08:53:24.422Z">
 <meta property="article:author" content="Xiao Luo">
 <meta property="article:tag" content="感悟">
 <meta name="twitter:card" content="summary_large_image">
@@ -72,6 +72,7 @@
 <link rel="stylesheet" href="/css/fluid-extension.css">
 <link rel="stylesheet" href="/css/scrollAnimation.css">
 <link rel="stylesheet" href="/css/scrollAnimation.css">
+<link rel="stylesheet" href="/iconfont/font_01/iconfont.css">
 
 
 
@@ -173,7 +174,7 @@
           
             <li class="nav-item">
               <a class="nav-link" href="/thanks/">
-                
+                <i class="iconfont icon-rcd-heart"></i>
                 感谢
               </a>
             </li>
@@ -430,6 +431,34 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.4.17/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-phi-fawn.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -714,6 +743,7 @@
   
 <script src="/js/sakura.js"></script>
 <script src="/js/scrollAnimation.js"></script>
+<script src="/iconfont/font_01/iconfont.js"></script>
 
 
 
