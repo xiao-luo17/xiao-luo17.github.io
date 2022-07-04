@@ -1,0 +1,918 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Xiao Luo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一个通过鼠标控制的Java飞机大战小游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java飞机大战小游戏">
+<meta property="og:url" content="http://example.com/2022/06/10/JavaPlaneGame%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98/index.html">
+<meta property="og:site_name" content="BLuog">
+<meta property="og:description" content="一个通过鼠标控制的Java飞机大战小游戏">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/Random(35).jpg">
+<meta property="article:published_time" content="2022-06-10T13:15:03.430Z">
+<meta property="article:modified_time" content="2022-07-01T16:28:41.511Z">
+<meta property="article:author" content="Xiao Luo">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="小玩意">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Random(35).jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Java飞机大战小游戏 - BLuog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/cloudedGlass.css">
+<link rel="stylesheet" href="/css/fluid-extension.css">
+<link rel="stylesheet" href="/css/scrollAnimation.css">
+<link rel="stylesheet" href="/css/scrollAnimation.css">
+<link rel="stylesheet" href="/iconfont/font_01/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>小罗の小窝</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                文章
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    归档
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    分类
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-kafei"></i>
+                休闲
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/bangumis/">
+                    <i class="iconfont icon-bilibili-fill"></i>
+                    番剧
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/music/">
+                    <i class="iconfont icon-leqi"></i>
+                    音乐
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/thanks/">
+                <i class="iconfont icon-aixin"></i>
+                感谢
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Random(35).jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java飞机大战小游戏"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Xiao Luo
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-10 21:15" pubdate>
+          2022年6月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          29k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          243 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java飞机大战小游戏</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="Java-Plane-Game"><a href="#Java-Plane-Game" class="headerlink" title="Java-Plane-Game"></a>Java-Plane-Game</h1><h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><ul>
+<li>S键为战机大招：子弹短时间增加到释放3排子弹</li>
+<li>通过鼠标的移动来避开敌方飞机的冲撞</li>
+<li>每击毁一架小飞机获得10点分数</li>
+<li>当达到1000分时，会出现Boss机，打败即可赢得胜利</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>Bullet</li>
+<li>Data</li>
+<li>Enemy</li>
+<li>Fire</li>
+<li>FlyObject</li>
+<li>GameFrame</li>
+<li>GameLogic</li>
+<li>GamePanel</li>
+<li>Listener</li>
+<li>MainStart</li>
+<li>MenuLogic</li>
+<li>MenuPanel</li>
+<li>MyPlane</li>
+<li>Wboss</li>
+</ul>
+<h3 id="Bullet"><a href="#Bullet" class="headerlink" title="Bullet"></a>Bullet</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Bullet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">FlyObject</span>&#123;<br><br>    <span class="hljs-type">int</span> dir;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Bullet</span><span class="hljs-params">(<span class="hljs-type">int</span> x1,<span class="hljs-type">int</span> y1,<span class="hljs-type">int</span> dir)</span>&#123;<br><br>        img = Data.getBullet();<br><br>        w = img.getWidth();<br>        h = img.getHeight();<br><br>        x = x1;<br>        y = y1;<br><br>        <span class="hljs-built_in">this</span>.dir = dir;<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">move</span><span class="hljs-params">()</span>&#123;<br><br>        <span class="hljs-keyword">if</span>(dir==<span class="hljs-number">0</span>)&#123;<br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">if</span>(dir==<span class="hljs-number">1</span>)&#123;<br>            x-=<span class="hljs-number">1</span>;<br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">if</span>(dir==<span class="hljs-number">2</span>)&#123;<br>            x+=<span class="hljs-number">1</span>;<br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="CoffeeBrewer"><a href="#CoffeeBrewer" class="headerlink" title="CoffeeBrewer"></a>CoffeeBrewer</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.BorderLayout;<br><span class="hljs-keyword">import</span> java.awt.GridLayout;<br><span class="hljs-keyword">import</span> javax.swing.JLabel;<br><span class="hljs-keyword">import</span> javax.swing.JPanel;<br><span class="hljs-keyword">import</span> javax.swing.JTextField;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CoffeeBrewer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Product</span> &#123;<br>    <span class="hljs-keyword">private</span> String model;<br>    <span class="hljs-keyword">private</span> String waterSupply;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> numberOfCups;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">CoffeeBrewer</span><span class="hljs-params">(String var1, String var2, <span class="hljs-type">double</span> var3, String var5, String var6, <span class="hljs-type">int</span> var7)</span> &#123;<br>        <span class="hljs-built_in">super</span>(var1, var2, var3);<br>        <span class="hljs-built_in">this</span>.model = var5;<br>        <span class="hljs-built_in">this</span>.waterSupply = var6;<br>        <span class="hljs-built_in">this</span>.numberOfCups = var7;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getModel</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.model;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getWaterSupply</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.waterSupply;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNumberOfCups</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.numberOfCups;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.toString() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getModel() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getWaterSupply() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getNumberOfCups();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> JPanel <span class="hljs-title function_">getPanel</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getCode());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getDescription());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(Double.toString(<span class="hljs-built_in">this</span>.getPrice()));<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getModel());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var6</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getWaterSupply());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var7</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(Integer.toString(<span class="hljs-built_in">this</span>.getNumberOfCups()));<br>        var2.setEditable(<span class="hljs-literal">false</span>);<br>        var3.setEditable(<span class="hljs-literal">false</span>);<br>        var4.setEditable(<span class="hljs-literal">false</span>);<br>        var5.setEditable(<span class="hljs-literal">false</span>);<br>        var6.setEditable(<span class="hljs-literal">false</span>);<br>        var7.setEditable(<span class="hljs-literal">false</span>);<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var8</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">6</span>, <span class="hljs-number">1</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Code:&quot;</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Description: &quot;</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Price:&quot;</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Model:&quot;</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Water supply:&quot;</span>));<br>        var8.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Number of cups:&quot;</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var9</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">6</span>, <span class="hljs-number">1</span>));<br>        var9.add(var2);<br>        var9.add(var3);<br>        var9.add(var4);<br>        var9.add(var5);<br>        var9.add(var6);<br>        var9.add(var7);<br>        var1.add(var8, <span class="hljs-string">&quot;West&quot;</span>);<br>        var1.add(var9, <span class="hljs-string">&quot;Center&quot;</span>);<br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Product"><a href="#Product" class="headerlink" title="Product"></a>Product</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.BorderLayout;<br><span class="hljs-keyword">import</span> java.awt.GridLayout;<br><span class="hljs-keyword">import</span> javax.swing.JLabel;<br><span class="hljs-keyword">import</span> javax.swing.JPanel;<br><span class="hljs-keyword">import</span> javax.swing.JTextField;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Product</span> &#123;<br>    <span class="hljs-keyword">private</span> String code;<br>    <span class="hljs-keyword">private</span> String description;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> price;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Product</span><span class="hljs-params">(String var1, String var2, <span class="hljs-type">double</span> var3)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = var1;<br>        <span class="hljs-built_in">this</span>.description = var2;<br>        <span class="hljs-built_in">this</span>.price = var3;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getCode</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.code;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDescription</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.description;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getPrice</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.price;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object var1)</span> &#123;<br>        <span class="hljs-keyword">return</span> var1 <span class="hljs-keyword">instanceof</span> Product &amp;&amp; <span class="hljs-built_in">this</span>.getCode().equals(((Product)var1).getCode());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getCode() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getDescription() + <span class="hljs-string">&quot;_&quot;</span> + <span class="hljs-built_in">this</span>.getPrice();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> JPanel <span class="hljs-title function_">getPanel</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getCode());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-built_in">this</span>.getDescription());<br>        <span class="hljs-type">JTextField</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(Double.toString(<span class="hljs-built_in">this</span>.getPrice()));<br>        var2.setEditable(<span class="hljs-literal">false</span>);<br>        var3.setEditable(<span class="hljs-literal">false</span>);<br>        var4.setEditable(<span class="hljs-literal">false</span>);<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>));<br>        var5.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Code:&quot;</span>));<br>        var5.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Description: &quot;</span>));<br>        var5.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Price:&quot;</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">var6</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>));<br>        var6.add(var2);<br>        var6.add(var3);<br>        var6.add(var4);<br>        var1.add(var5, <span class="hljs-string">&quot;West&quot;</span>);<br>        var1.add(var6, <span class="hljs-string">&quot;Center&quot;</span>);<br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Order"><a href="#Order" class="headerlink" title="Order"></a>Order</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><span class="hljs-keyword">import</span> java.util.Vector;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Order</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Vector</span> <span class="hljs-variable">items</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector</span>();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Order</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addItem</span><span class="hljs-params">(OrderItem var1)</span> &#123;<br>        <span class="hljs-built_in">this</span>.items.add(var1);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeItem</span><span class="hljs-params">(OrderItem var1)</span> &#123;<br>        <span class="hljs-built_in">this</span>.items.removeElement(var1);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Iterator <span class="hljs-title function_">getItemsIterator</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.items.iterator();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> OrderItem <span class="hljs-title function_">getItem</span><span class="hljs-params">(Product var1)</span> &#123;<br>        <span class="hljs-type">Iterator</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getItemsIterator();<br><br>        OrderItem var3;<br>        <span class="hljs-keyword">do</span> &#123;<br>            <span class="hljs-keyword">if</span> (!var2.hasNext()) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125;<br><br>            var3 = (OrderItem)var2.next();<br>        &#125; <span class="hljs-keyword">while</span>(!var3.getProduct().equals(var1));<br><br>        <span class="hljs-keyword">return</span> var3;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNumberOfItems</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.items.size();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getTotalCost</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">var1</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.0D</span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getItemsIterator(); var3.hasNext(); var1 += ((OrderItem)var3.next()).getValue()) &#123;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> OrderItem[] getItems() &#123;<br>        OrderItem[] var1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderItem</span>[<span class="hljs-built_in">this</span>.getNumberOfItems()];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getItemsIterator(); var3.hasNext(); var1[var2++] = (OrderItem)var3.next()) &#123;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="OrderItem"><a href="#OrderItem" class="headerlink" title="OrderItem"></a>OrderItem</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderItem</span> &#123;<br>    <span class="hljs-keyword">private</span> Product product;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> quantity;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">OrderItem</span><span class="hljs-params">(Product var1, <span class="hljs-type">int</span> var2)</span> &#123;<br>        <span class="hljs-built_in">this</span>.product = var1;<br>        <span class="hljs-built_in">this</span>.quantity = var2;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProduct</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.product;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getQuantity</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.quantity;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setQuantity</span><span class="hljs-params">(<span class="hljs-type">int</span> var1)</span> &#123;<br>        <span class="hljs-built_in">this</span>.quantity = var1;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getValue</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getProduct().getPrice() * (<span class="hljs-type">double</span>)<span class="hljs-built_in">this</span>.getQuantity();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getQuantity() + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">this</span>.getProduct().getCode() + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">this</span>.getProduct().getPrice();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Sales"><a href="#Sales" class="headerlink" title="Sales"></a>Sales</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><span class="hljs-keyword">import</span> java.util.Vector;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Sales</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Vector</span> <span class="hljs-variable">orders</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector</span>();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Sales</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addOrder</span><span class="hljs-params">(Order var1)</span> &#123;<br>        <span class="hljs-built_in">this</span>.orders.add(var1);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Iterator <span class="hljs-title function_">getOrdersIterator</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.orders.iterator();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNumberOfOrders</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.orders.size();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="SalesFormatter"><a href="#SalesFormatter" class="headerlink" title="SalesFormatter"></a>SalesFormatter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">SalesFormatter</span> &#123;<br>    String <span class="hljs-title function_">formatSales</span><span class="hljs-params">(Sales var1)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Catalog"><a href="#Catalog" class="headerlink" title="Catalog"></a>Catalog</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><span class="hljs-keyword">import</span> java.util.Vector;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Catalog</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Vector</span> <span class="hljs-variable">products</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector</span>();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Catalog</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addProduct</span><span class="hljs-params">(Product var1)</span> &#123;<br>        <span class="hljs-built_in">this</span>.products.add(var1);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Iterator <span class="hljs-title function_">getProductsIterator</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.products.iterator();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProduct</span><span class="hljs-params">(String var1)</span> &#123;<br>        <span class="hljs-type">Iterator</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getProductsIterator();<br><br>        Product var3;<br>        <span class="hljs-keyword">do</span> &#123;<br>            <span class="hljs-keyword">if</span> (!var2.hasNext()) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125;<br><br>            var3 = (Product)var2.next();<br>        &#125; <span class="hljs-keyword">while</span>(!var3.getCode().equals(var1));<br><br>        <span class="hljs-keyword">return</span> var3;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNumberOfProducts</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.products.size();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String[] getCodes() &#123;<br>        String[] var1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[<span class="hljs-built_in">this</span>.getNumberOfProducts()];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.getProductsIterator(); var3.hasNext(); var1[var2++] = ((Product)var3.next()).getCode()) &#123;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> var1;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="CatalogLoader"><a href="#CatalogLoader" class="headerlink" title="CatalogLoader"></a>CatalogLoader</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.FileNotFoundException;<br><span class="hljs-keyword">import</span> java.io.IOException;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">CatalogLoader</span> &#123;<br>    Catalog <span class="hljs-title function_">loadCatalog</span><span class="hljs-params">(String var1)</span> <span class="hljs-keyword">throws</span> FileNotFoundException, IOException, DataFormatException;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="FileCatalogLoader"><a href="#FileCatalogLoader" class="headerlink" title="FileCatalogLoader"></a>FileCatalogLoader</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.BufferedReader;<br><span class="hljs-keyword">import</span> java.io.FileNotFoundException;<br><span class="hljs-keyword">import</span> java.io.FileReader;<br><span class="hljs-keyword">import</span> java.io.IOException;<br><span class="hljs-keyword">import</span> java.util.StringTokenizer;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FileCatalogLoader</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">CatalogLoader</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">COFFEE_PREFIX</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Coffee&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">COFFEE_BREWER_PREFIX</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Brewer&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">PRODUCT_PREFIX</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Product&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">DELIM</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;_&quot;</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileCatalogLoader</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Catalog <span class="hljs-title function_">loadCatalog</span><span class="hljs-params">(String var1)</span> <span class="hljs-keyword">throws</span> FileNotFoundException, IOException, DataFormatException &#123;<br>        <span class="hljs-type">Catalog</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Catalog</span>();<br>        <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(var1));<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">String</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> var3.readLine(); var4 != <span class="hljs-literal">null</span>; var4 = var3.readLine()) &#123;<br>            <span class="hljs-type">Object</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>            <span class="hljs-keyword">if</span> (var4.startsWith(<span class="hljs-string">&quot;Brewer&quot;</span>)) &#123;<br>                var5 = <span class="hljs-built_in">this</span>.readCoffeeBrewer(var4);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (var4.startsWith(<span class="hljs-string">&quot;Coffee&quot;</span>)) &#123;<br>                var5 = <span class="hljs-built_in">this</span>.readCoffee(var4);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (!var4.startsWith(<span class="hljs-string">&quot;Product&quot;</span>)) &#123;<br>                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var4);<br>                &#125;<br><br>                var5 = <span class="hljs-built_in">this</span>.readProduct(var4);<br>            &#125;<br><br>            var2.addProduct((Product)var5);<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> var2;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> Product <span class="hljs-title function_">readProduct</span><span class="hljs-params">(String var1)</span> <span class="hljs-keyword">throws</span> DataFormatException &#123;<br>        <span class="hljs-type">StringTokenizer</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringTokenizer</span>(var1, <span class="hljs-string">&quot;_&quot;</span>);<br>        <span class="hljs-keyword">if</span> (var2.countTokens() != <span class="hljs-number">4</span>) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> var2.nextToken();<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Product</span>(var2.nextToken(), var2.nextToken(), Double.parseDouble(var2.nextToken()));<br>            &#125; <span class="hljs-keyword">catch</span> (NumberFormatException var4) &#123;<br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> Coffee <span class="hljs-title function_">readCoffee</span><span class="hljs-params">(String var1)</span> <span class="hljs-keyword">throws</span> DataFormatException &#123;<br>        <span class="hljs-type">StringTokenizer</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringTokenizer</span>(var1, <span class="hljs-string">&quot;_&quot;</span>);<br>        <span class="hljs-keyword">if</span> (var2.countTokens() != <span class="hljs-number">10</span>) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> var2.nextToken();<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Coffee</span>(var2.nextToken(), var2.nextToken(), Double.parseDouble(var2.nextToken()), var2.nextToken(), var2.nextToken(), var2.nextToken(), var2.nextToken(), var2.nextToken(), var2.nextToken());<br>            &#125; <span class="hljs-keyword">catch</span> (NumberFormatException var4) &#123;<br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> CoffeeBrewer <span class="hljs-title function_">readCoffeeBrewer</span><span class="hljs-params">(String var1)</span> <span class="hljs-keyword">throws</span> DataFormatException &#123;<br>        <span class="hljs-type">StringTokenizer</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringTokenizer</span>(var1, <span class="hljs-string">&quot;_&quot;</span>);<br>        <span class="hljs-keyword">if</span> (var2.countTokens() != <span class="hljs-number">7</span>) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> var2.nextToken();<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CoffeeBrewer</span>(var2.nextToken(), var2.nextToken(), Double.parseDouble(var2.nextToken()), var2.nextToken(), var2.nextToken(), Integer.parseInt(var2.nextToken()));<br>            &#125; <span class="hljs-keyword">catch</span> (NumberFormatException var4) &#123;<br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DataFormatException</span>(var1);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="DataFormatException"><a href="#DataFormatException" class="headerlink" title="DataFormatException"></a>DataFormatException</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DataFormatException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Exception</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">DataFormatException</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">DataFormatException</span><span class="hljs-params">(String var1)</span> &#123;<br>        <span class="hljs-built_in">super</span>(var1);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="PlainTextSalesFormatter"><a href="#PlainTextSalesFormatter" class="headerlink" title="PlainTextSalesFormatter"></a>PlainTextSalesFormatter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PlainTextSalesFormatter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">SalesFormatter</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">NEW_LINE</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;line.separator&quot;</span>);<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">PlainTextSalesFormatter</span> <span class="hljs-variable">singletonInstance</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PlainTextSalesFormatter <span class="hljs-title function_">getSingletonInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singletonInstance == <span class="hljs-literal">null</span>) &#123;<br>            singletonInstance = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PlainTextSalesFormatter</span>();<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> singletonInstance;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">PlainTextSalesFormatter</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">formatSales</span><span class="hljs-params">(Sales var1)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        Order var5;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> var1.getOrdersIterator(); var4.hasNext(); var2 = var2 + NEW_LINE + <span class="hljs-string">&quot;Total = &quot;</span> + var5.getTotalCost() + NEW_LINE) &#123;<br>            var5 = (Order)var4.next();<br>            <span class="hljs-type">StringBuffer</span> <span class="hljs-variable">var10000</span> <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>()).append(var2).append(<span class="hljs-string">&quot;------------------------&quot;</span>).append(NEW_LINE).append(<span class="hljs-string">&quot;Order &quot;</span>);<br>            ++var3;<br>            var2 = var10000.append(var3).append(NEW_LINE).append(NEW_LINE).toString();<br><br>            OrderItem var7;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var6</span> <span class="hljs-operator">=</span> var5.getItemsIterator(); var6.hasNext(); var2 = var2 + var7.getQuantity() + <span class="hljs-string">&quot; &quot;</span> + var7.getProduct().getCode() + <span class="hljs-string">&quot; &quot;</span> + var7.getProduct().getPrice() + NEW_LINE) &#123;<br>                var7 = (OrderItem)var6.next();<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> var2;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="HTMLSalesFormatter"><a href="#HTMLSalesFormatter" class="headerlink" title="HTMLSalesFormatter"></a>HTMLSalesFormatter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HTMLSalesFormatter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">SalesFormatter</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">NEW_LINE</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;line.separator&quot;</span>);<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">HTMLSalesFormatter</span> <span class="hljs-variable">singletonInstance</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> HTMLSalesFormatter <span class="hljs-title function_">getSingletonInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singletonInstance == <span class="hljs-literal">null</span>) &#123;<br>            singletonInstance = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HTMLSalesFormatter</span>();<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> singletonInstance;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">HTMLSalesFormatter</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">formatSales</span><span class="hljs-params">(Sales var1)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&lt;html&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;  &lt;body&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;    &lt;center&gt;&lt;h2&gt;Orders&lt;/h2&gt;&lt;/center&gt;&quot;</span> + NEW_LINE;<br>        <span class="hljs-type">Iterator</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> var1.getOrdersIterator();<br><br>        <span class="hljs-keyword">while</span>(var3.hasNext()) &#123;<br>            <span class="hljs-type">Order</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> (Order)var3.next();<br>            var2 = var2 + <span class="hljs-string">&quot;    &lt;hr&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;    &lt;h4&gt;Total = &quot;</span> + var4.getTotalCost() + <span class="hljs-string">&quot;&lt;/h4&gt;&quot;</span> + NEW_LINE;<br><br>            OrderItem var6;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> var4.getItemsIterator(); var5.hasNext(); var2 = var2 + <span class="hljs-string">&quot;      &lt;p&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;        &lt;b&gt;code:&lt;/b&gt; &quot;</span> + var6.getProduct().getCode() + <span class="hljs-string">&quot;&lt;br&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;        &lt;b&gt;quantity:&lt;/b&gt; &quot;</span> + var6.getQuantity() + <span class="hljs-string">&quot;&lt;br&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;        &lt;b&gt;price:&lt;/b&gt; &quot;</span> + var6.getProduct().getPrice() + NEW_LINE + <span class="hljs-string">&quot;      &lt;/p&gt;&quot;</span> + NEW_LINE) &#123;<br>                var6 = (OrderItem)var5.next();<br>            &#125;<br>        &#125;<br><br>        var2 = var2 + <span class="hljs-string">&quot;  &lt;/body&gt;&quot;</span> + NEW_LINE + <span class="hljs-string">&quot;&lt;/html&gt;&quot;</span>;<br>        <span class="hljs-keyword">return</span> var2;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="XMLSalesFormatter"><a href="#XMLSalesFormatter" class="headerlink" title="XMLSalesFormatter"></a>XMLSalesFormatter</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Iterator;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">XMLSalesFormatter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">SalesFormatter</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">NEW_LINE</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;line.separator&quot;</span>);<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">XMLSalesFormatter</span> <span class="hljs-variable">singletonInstance</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> XMLSalesFormatter <span class="hljs-title function_">getSingletonInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singletonInstance == <span class="hljs-literal">null</span>) &#123;<br>            singletonInstance = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLSalesFormatter</span>();<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> singletonInstance;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">XMLSalesFormatter</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">formatSales</span><span class="hljs-params">(Sales var1)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&lt;Sales&gt;&quot;</span> + NEW_LINE;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> var1.getOrdersIterator(); var3.hasNext(); var2 = var2 + <span class="hljs-string">&quot;  &lt;/Order&gt;&quot;</span> + NEW_LINE) &#123;<br>            <span class="hljs-type">Order</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> (Order)var3.next();<br>            var2 = var2 + <span class="hljs-string">&quot;  &lt;Order total=\&quot;&quot;</span> + var4.getTotalCost() + <span class="hljs-string">&quot;\&quot;&gt;&quot;</span> + NEW_LINE;<br><br>            OrderItem var6;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">Iterator</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> var4.getItemsIterator(); var5.hasNext(); var2 = var2 + <span class="hljs-string">&quot;    &lt;OrderItem quantity=\&quot;&quot;</span> + var6.getQuantity() + <span class="hljs-string">&quot;\&quot; price=\&quot;&quot;</span> + var6.getProduct().getPrice() + <span class="hljs-string">&quot;\&quot;&gt;&quot;</span> + var6.getProduct().getCode() + <span class="hljs-string">&quot;&lt;/OrderItem&gt;&quot;</span> + NEW_LINE) &#123;<br>                var6 = (OrderItem)var5.next();<br>            &#125;<br>        &#125;<br><br>        var2 = var2 + <span class="hljs-string">&quot;&lt;/Sales&gt;&quot;</span>;<br>        <span class="hljs-keyword">return</span> var2;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="GourmetCoffeeGUI"><a href="#GourmetCoffeeGUI" class="headerlink" title="GourmetCoffeeGUI"></a>GourmetCoffeeGUI</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.*;<br><span class="hljs-keyword">import</span> java.awt.event.*;<br><span class="hljs-keyword">import</span> javax.swing.*;<br><span class="hljs-keyword">import</span> javax.swing.event.*;<br><span class="hljs-keyword">import</span> java.io.*;<br><span class="hljs-keyword">import</span> java.text.*;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Gourmet Coffee System.</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> author name</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@version</span> 1.1.0</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> Product</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> Coffee</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> CoffeeBrewer</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> Catalog</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> OrderItem</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> Order</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> Sales</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> CatalogLoader</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> FileCatalogLoader</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> DataFormatException</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> SalesFormatter</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> PlainTextSalesFormatter</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> HTMLSalesFormatter</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@see</span> XMLSalesFormatter</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GourmetCoffeeGUI</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JPanel</span> &#123;<br><br>    <span class="hljs-comment">/* Standar error stream */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">PrintWriter</span> <span class="hljs-variable">stdErr</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PrintWriter</span>(System.err, <span class="hljs-literal">true</span>);<br><br>    <span class="hljs-comment">/* Window width in pixels */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">WIDTH</span> <span class="hljs-operator">=</span> <span class="hljs-number">600</span>;<br><br>    <span class="hljs-comment">/* Window height in pixels */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">HEIGHT</span> <span class="hljs-operator">=</span> <span class="hljs-number">530</span>;<br><br>    <span class="hljs-comment">/* Size of the catalog list cell in pixels */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">CATALOG_CELL_SIZE</span> <span class="hljs-operator">=</span> <span class="hljs-number">50</span>;<br><br>    <span class="hljs-comment">/* Visible rows in catalog list */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">CATALOG_LIST_ROWS</span> <span class="hljs-operator">=</span> <span class="hljs-number">14</span>;<br><br>    <span class="hljs-comment">/* Size of the order list cell in pixels */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">ORDER_CELL_SIZE</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br><br>    <span class="hljs-comment">/* Visible rows in order list */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">ORDER_LIST_ROWS</span> <span class="hljs-operator">=</span> <span class="hljs-number">6</span>;<br><br>    <span class="hljs-comment">/* Size quantity text field */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">QUANTITY__TEXTFIELD_SIZE</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;<br><br>    <span class="hljs-comment">/* Size total text field */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">TOTAL__TEXTFIELD_SIZE</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br><br>    <span class="hljs-comment">/* Rows in status text area rows */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">STATUS_ROWS</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br><br>    <span class="hljs-comment">/* Rows in status text area cols */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">STATUS_COLS</span> <span class="hljs-operator">=</span> <span class="hljs-number">40</span>;<br><br>    <span class="hljs-keyword">private</span> JList catalogList;<br>    <span class="hljs-keyword">private</span> JList orderList;<br>    <span class="hljs-keyword">private</span> JButton addModifyButton;<br>    <span class="hljs-keyword">private</span> JButton removeButton;<br>    <span class="hljs-keyword">private</span> JButton registerSaleButton;<br>    <span class="hljs-keyword">private</span> JButton displaySalesButton;<br>    <span class="hljs-keyword">private</span> JButton saveSalesButton;<br>    <span class="hljs-keyword">private</span> JPanel productPanel;<br>    <span class="hljs-keyword">private</span> JLabel quantityLabel;<br>    <span class="hljs-keyword">private</span> JLabel totalLabel;<br>    <span class="hljs-keyword">private</span> JTextField quantityTextField;<br>    <span class="hljs-keyword">private</span> JTextField totalTextField;<br>    <span class="hljs-keyword">private</span> JTextArea statusTextArea;<br>    <span class="hljs-keyword">private</span> JRadioButton plainRadioButton;<br>    <span class="hljs-keyword">private</span> JRadioButton HTMLRadioButton;<br>    <span class="hljs-keyword">private</span> JRadioButton XMLRadioButton;<br><br>    <span class="hljs-keyword">private</span> JFileChooser fileChooser;<br><br>    <span class="hljs-keyword">private</span> Catalog catalog;<br>    <span class="hljs-keyword">private</span> Order currentOrder;<br>    <span class="hljs-keyword">private</span> Sales sales;<br>    <span class="hljs-keyword">private</span> SalesFormatter salesFormatter;<br>    <span class="hljs-keyword">private</span> NumberFormat dollarFormatter;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Loads a product catalog and starts the application.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> args String arguments.  Not used.</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> IOException if there are errors in the loading the catalog.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br><br>        <span class="hljs-type">String</span> <span class="hljs-variable">filename</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br><br>        <span class="hljs-keyword">if</span> (args.length != <span class="hljs-number">1</span>) &#123;<br>            filename = <span class="hljs-string">&quot;catalog.dat&quot;</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            filename = args[<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-type">Catalog</span> <span class="hljs-variable">catalog</span> <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileCatalogLoader</span>()).loadCatalog(filename);<br><br>            <span class="hljs-type">JFrame</span> <span class="hljs-variable">frame</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JFrame</span>(<span class="hljs-string">&quot;Gourmet Coffee&quot;</span>);<br><br>            frame.setContentPane(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GourmetCoffeeGUI</span>(catalog));<br>            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>            frame.setSize(WIDTH, HEIGHT);<br>            frame.setResizable(<span class="hljs-literal">true</span>);<br>            frame.setVisible(<span class="hljs-literal">true</span>);<br><br>        &#125; <span class="hljs-keyword">catch</span> (FileNotFoundException fnfe) &#123;<br>            stdErr.println(<span class="hljs-string">&quot;The file does not exist&quot;</span>);<br><br>            System.exit(<span class="hljs-number">1</span>);<br><br>        &#125; <span class="hljs-keyword">catch</span> (DataFormatException dfe) &#123;<br>            stdErr.println(<span class="hljs-string">&quot;The file contains malformed data: &quot;</span><br>                    + dfe.getMessage());<br><br>            System.exit(<span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Instantiates the components and arranges them in a window.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> initialCatalog a product catalog.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">GourmetCoffeeGUI</span><span class="hljs-params">(Catalog initialCatalog)</span> &#123;<br><br>        <span class="hljs-comment">// create the components</span><br>        catalogList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JList</span>();<br>        orderList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JList</span>();<br>        catalogList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);<br>        catalogList.setVisibleRowCount(CATALOG_LIST_ROWS);<br>        catalogList.setFixedCellWidth(CATALOG_CELL_SIZE);<br>        orderList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);<br>        orderList.setVisibleRowCount(ORDER_LIST_ROWS);<br>        orderList.setFixedCellWidth(ORDER_CELL_SIZE);<br>        addModifyButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;Add|Modify Order Item&quot;</span>);<br>        removeButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;Remove Order Item&quot;</span>);<br>        registerSaleButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;Register Sale of Current Order&quot;</span>);<br>        displaySalesButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;Display Sales&quot;</span>);<br>        saveSalesButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>(<span class="hljs-string">&quot;Save Sales&quot;</span>);<br>        quantityLabel = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Quantity:&quot;</span>);<br>        totalLabel = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JLabel</span>(<span class="hljs-string">&quot;Total:&quot;</span>);<br>        quantityTextField = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-string">&quot;&quot;</span>, QUANTITY__TEXTFIELD_SIZE);<br>        totalTextField = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextField</span>(<span class="hljs-string">&quot;$0.00&quot;</span>, TOTAL__TEXTFIELD_SIZE);<br>        totalTextField.setEditable(<span class="hljs-literal">false</span>);<br>        statusTextArea = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JTextArea</span>(STATUS_ROWS, STATUS_COLS);<br>        statusTextArea.setEditable(<span class="hljs-literal">false</span>);<br>        plainRadioButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JRadioButton</span>(<span class="hljs-string">&quot;Plain&quot;</span>, <span class="hljs-literal">true</span>);<br>        HTMLRadioButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JRadioButton</span>(<span class="hljs-string">&quot;HTML&quot;</span>);<br>        XMLRadioButton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JRadioButton</span>(<span class="hljs-string">&quot;XML&quot;</span>);<br>        <span class="hljs-type">ButtonGroup</span> <span class="hljs-variable">group</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ButtonGroup</span>();<br>        group.add(plainRadioButton);<br>        group.add(HTMLRadioButton);<br>        group.add(XMLRadioButton);<br><br>        <span class="hljs-comment">// Product Information panel</span><br>        productPanel = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>();<br>        productPanel.setBorder(<br>                BorderFactory.createTitledBorder(<span class="hljs-string">&quot;Product Information&quot;</span>));<br><br>        <span class="hljs-comment">// Catalog panel</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">catalogPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>();<br>        catalogPanel.setBorder(BorderFactory.createTitledBorder(<span class="hljs-string">&quot;Catalog&quot;</span>));<br>        catalogPanel.add(<br>                <span class="hljs-keyword">new</span> <span class="hljs-title class_">JScrollPane</span>(catalogList,<br>                        JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,<br>                        JScrollPane.HORIZONTAL_SCROLLBAR_NEVER));<br><br>        <span class="hljs-comment">// &quot;Add|Modify Product&quot; panel</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">centralPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">addModifyPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">quantityPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>();<br>        quantityPanel.add(quantityLabel);<br>        quantityPanel.add(quantityTextField);<br>        addModifyPanel.add(quantityPanel);<br>        addModifyPanel.add(addModifyButton);<br>        centralPanel.add(productPanel, BorderLayout.CENTER);<br>        centralPanel.add(addModifyPanel, BorderLayout.SOUTH);<br><br>        <span class="hljs-comment">// Order panel</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">orderPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        orderPanel.setBorder(BorderFactory.createTitledBorder(<span class="hljs-string">&quot;Order&quot;</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">totalPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>();<br>        totalPanel.add(totalLabel);<br>        totalPanel.add(totalTextField);<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">buttonsPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>));<br>        buttonsPanel.add(removeButton);<br>        buttonsPanel.add(registerSaleButton);<br>        orderPanel.add(totalPanel, BorderLayout.NORTH);<br>        orderPanel.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JScrollPane</span>(orderList,<br>                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,<br>                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.CENTER);<br>        orderPanel.add(buttonsPanel, BorderLayout.SOUTH);<br><br>        <span class="hljs-comment">// Status panel</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">bottomPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        bottomPanel.setBorder(BorderFactory.createTitledBorder(<span class="hljs-string">&quot;Status&quot;</span>));<br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">salesButtonsPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JPanel</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GridLayout</span>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>));<br>        salesButtonsPanel.add(plainRadioButton);<br>        salesButtonsPanel.add(HTMLRadioButton);<br>        salesButtonsPanel.add(XMLRadioButton);<br>        salesButtonsPanel.add(displaySalesButton);<br>        salesButtonsPanel.add(saveSalesButton);<br>        bottomPanel.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">JScrollPane</span>(statusTextArea,<br>                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,<br>                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED), BorderLayout.CENTER);<br>        bottomPanel.add(salesButtonsPanel, BorderLayout.SOUTH);<br><br>        <span class="hljs-comment">// arrange panels in window</span><br>        setLayout(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderLayout</span>());<br>        add(catalogPanel, BorderLayout.WEST);<br>        add(centralPanel, BorderLayout.CENTER);<br>        add(orderPanel, BorderLayout.EAST);<br>        add(bottomPanel, BorderLayout.SOUTH);<br><br>        <span class="hljs-comment">// start listening for list and buttons events</span><br>        catalogList.addListSelectionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">DisplayProductListener</span>());<br>        addModifyButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">AddModifyListener</span>());<br>        removeButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RemoveListener</span>());<br>        registerSaleButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RegisterSaleListener</span>());<br>        displaySalesButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">DisplaySalesListener</span>());<br>        saveSalesButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">SaveSalesListener</span>());<br>        plainRadioButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PlainListener</span>());<br>        HTMLRadioButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">HTMLListener</span>());<br>        XMLRadioButton.addActionListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLListener</span>());<br><br>        <span class="hljs-comment">// populate the product catalog</span><br>        catalog = initialCatalog;<br>        catalogList.setListData(catalog.getCodes());<br><br>        currentOrder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Order</span>();<br>        sales = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Sales</span>();<br>        salesFormatter = PlainTextSalesFormatter.getSingletonInstance();<br>        fileChooser = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JFileChooser</span>();<br>        dollarFormatter = NumberFormat.getCurrencyInstance();<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * This inner class handles list-selection events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">DisplayProductListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ListSelectionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Displays the information of the selected product.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">valueChanged</span><span class="hljs-params">(ListSelectionEvent event)</span> &#123;<br><br>            <span class="hljs-keyword">if</span> (!catalogList.getValueIsAdjusting()) &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">code</span> <span class="hljs-operator">=</span> (String) catalogList.getSelectedValue();<br><br>                <span class="hljs-type">Product</span> <span class="hljs-variable">product</span> <span class="hljs-operator">=</span> catalog.getProduct(code);<br><br>                productPanel.removeAll();<br>                productPanel.setVisible(<span class="hljs-literal">false</span>);        <span class="hljs-comment">// Use this</span><br>                productPanel.add(product.getPanel());  <span class="hljs-comment">// to update the</span><br>                productPanel.setVisible(<span class="hljs-literal">true</span>);         <span class="hljs-comment">// panel correctly</span><br><br>                statusTextArea.setText(<span class="hljs-string">&quot;Product &quot;</span> + code<br>                        + <span class="hljs-string">&quot; has been displayed&quot;</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;addModifyButton&lt;/code&gt; events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">AddModifyListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Adds an order item to the current order.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            <span class="hljs-type">String</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> (String) GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.catalogList.getSelectedValue();<br><br>            <span class="hljs-type">int</span> var2;<br>            <span class="hljs-keyword">try</span> &#123;<br>                var2 = Integer.parseInt(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.quantityTextField.getText());<br>            &#125; <span class="hljs-keyword">catch</span> (NumberFormatException var6) &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;Please enter an integer.&quot;</span>);<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (var2 &lt; <span class="hljs-number">1</span>) &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;Please enter a right integer.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (var3 == <span class="hljs-literal">null</span>) &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;Please select a product code from the catalog list.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">Product</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.catalog.getProduct(var3);<br>                <span class="hljs-type">OrderItem</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getItem(var4);<br>                <span class="hljs-keyword">if</span> (var5 == <span class="hljs-literal">null</span>) &#123;<br>                    var5 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderItem</span>(var4, var2);<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.addItem(var5);<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.orderList.setListData(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getItems());<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The product has been added.&quot;</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    var5.setQuantity(var2);<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.orderList.setListData(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getItems());<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The product has been modified.&quot;</span>);<br>                &#125;<br><br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.totalTextField.setText(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.dollarFormatter.format(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getTotalCost()));<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.quantityTextField.setText(<span class="hljs-string">&quot;&quot;</span>);<br>            &#125;<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;removeButton&lt;/code&gt; events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">RemoveListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Removes an order item from the current order.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            <span class="hljs-keyword">if</span> (GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getNumberOfItems() == <span class="hljs-number">0</span>) &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The order is empty.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">OrderItem</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> (OrderItem) GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.orderList.getSelectedValue();<br>                <span class="hljs-keyword">if</span> (var2 == <span class="hljs-literal">null</span>) &#123;<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;Please select an item from the order list.&quot;</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.removeItem(var2);<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.orderList.setListData(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getItems());<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.totalTextField.setText(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.dollarFormatter.format(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.currentOrder.getTotalCost()));<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The product has been removed.&quot;</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;registerSaleButton&lt;/code&gt; button events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegisterSaleListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Registers the sale of the current order.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            <span class="hljs-keyword">if</span> (currentOrder.getNumberOfItems() == <span class="hljs-number">0</span>) &#123;<br>                statusTextArea.setText(<span class="hljs-string">&quot;The order is empty.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                sales.addOrder(currentOrder);<br>                currentOrder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Order</span>();<br>                orderList.setListData(currentOrder.getItems());<br>                totalTextField.setText(dollarFormatter.format(<span class="hljs-number">0</span>));<br>                statusTextArea.setText(<span class="hljs-string">&quot;The sale has been registered.&quot;</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;displaySalesButton&lt;/code&gt;events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">DisplaySalesListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Displays the sales information.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            <span class="hljs-keyword">if</span> (sales.getNumberOfOrders() == <span class="hljs-number">0</span>) &#123;<br>                statusTextArea.setText(<span class="hljs-string">&quot;No orders have been sold.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                statusTextArea.setText(salesFormatter.formatSales(sales));<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;saveSalesButton&lt;/code&gt;  events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">SaveSalesListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Saves the sales informations in a file.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            <span class="hljs-keyword">if</span> (GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.sales.getNumberOfOrders() == <span class="hljs-number">0</span>) &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;No orders have been sold.&quot;</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.fileChooser.setFileSelectionMode(<span class="hljs-number">0</span>);<br>                <span class="hljs-type">int</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.fileChooser.showSaveDialog((Component) <span class="hljs-literal">null</span>);<br>                <span class="hljs-keyword">if</span> (var2 != <span class="hljs-number">0</span>) &#123;<br>                    GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The sales information has not been saved.&quot;</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-type">File</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.fileChooser.getSelectedFile();<br><br>                    <span class="hljs-keyword">try</span> &#123;<br>                        <span class="hljs-type">PrintWriter</span> <span class="hljs-variable">var4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PrintWriter</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(var3));<br>                        var4.print(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.salesFormatter.formatSales(GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.sales));<br>                        var4.close();<br>                        GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;The sales information has been saved.&quot;</span>);<br>                    &#125; <span class="hljs-keyword">catch</span> (IOException var5) &#123;<br>                        GourmetCoffeeGUI.<span class="hljs-built_in">this</span>.statusTextArea.setText(<span class="hljs-string">&quot;Error: Problem with I/O&quot;</span>);<br>                    &#125;<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">/* PLACE YOUR CODE HERE */</span><br><br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;plainRadioButton&lt;/code&gt; events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">PlainListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Sets the sales formatter to plain text.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            salesFormatter = PlainTextSalesFormatter.getSingletonInstance();<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;HTMLRadioButton&lt;/code&gt; events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">HTMLListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Sets the sales formatter to HTML.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br>            salesFormatter = HTMLSalesFormatter.getSingletonInstance();<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * This inner class processes &lt;code&gt;XMLRadioButton&lt;/code&gt; events.</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">XMLListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ActionListener</span> &#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * Sets the sales formatter to XML.</span><br><span class="hljs-comment">         *</span><br><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> event the event object.</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">actionPerformed</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br><br>            salesFormatter = XMLSalesFormatter.getSingletonInstance();<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E5%B0%8F%E7%8E%A9%E6%84%8F/">#小玩意</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java飞机大战小游戏</div>
+      <div>http://example.com/2022/06/10/JavaPlaneGame飞机大战/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Xiao Luo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月10日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/02/%E6%8E%92%E5%BA%8F/" title="经典排序算法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">经典排序算法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/29/%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/" title="第十一次作业">
+                        <span class="hidden-mobile">第十一次作业</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.4.17/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-phi-fawn.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/sakura.js"></script>
+<script src="/js/scrollAnimation.js"></script>
+<script src="/iconfont/font_01/iconfont.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
