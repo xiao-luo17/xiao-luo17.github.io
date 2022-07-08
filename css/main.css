@@ -1203,6 +1203,10 @@ i.iconfont {
     font-size: 1.25rem;
   }
 }
+#board {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
 #valine.v[data-class=v] .status-bar,
 #valine.v[data-class=v] .veditor,
 #valine.v[data-class=v] .vinput,
@@ -2014,15 +2018,12 @@ input[type=checkbox] {
 .links .card-body {
   margin: 1rem 0;
   padding: 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   display: block;
   width: 100%;
   height: 100%;
 }
-.links .card-body:hover .link-avatar {
-  transform: scale(1.1);
-}
-.links .card-content {
+.card-content {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
@@ -2084,4 +2085,40 @@ input[type=checkbox] {
   .link-text:only-child {
     margin-left: 1rem;
   }
+}
+.hover-with-bg {
+  transform: translateZ(0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+.hover-with-bg:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(113,116,221,0.49);
+  border-radius: 0.5rem;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+}
+.hover-with-bg:hover:before,
+.hover-with-bg:focus:before,
+.hover-with-bg:active:before {
+  transform: scaleX(1);
+}
+.hover-with-bg:hover {
+  color: #fff;
+  background-color: rgba(113,116,221,0.49);
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(113,116,221,0.49);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(113,116,221,0.49);
+  box-shadow: 10px 10px 99px 6px rgba(113,116,221,0.49);
+}
+.card-content:hover .link-avatar {
+  transform: rotate(-360deg);
+  transition: all 0.6s;
 }
