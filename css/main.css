@@ -1158,6 +1158,7 @@ i.iconfont {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0.25rem;
+  text-align: center;
 }
 .index-header .index-pin {
   color: var(--text-color);
@@ -1177,6 +1178,7 @@ i.iconfont {
   overflow: hidden;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 .index-excerpt > div {
   width: 100%;
@@ -1310,7 +1312,7 @@ i.iconfont {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(252,174,243,0.28);
+  background: rgba(252,174,243,0.1);
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transition-property: transform;
