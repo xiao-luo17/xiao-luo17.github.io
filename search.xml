@@ -8,7 +8,7 @@
       <link href="/2022/07/11/C%E5%AE%9E%E7%8E%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/"/>
       <url>/2022/07/11/C%E5%AE%9E%E7%8E%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title="."></a>.</h1><h3 id="项目记录"><a href="#项目记录" class="headerlink" title="项目记录"></a>项目记录</h3><div class="note danger flat"><p>项目时间戳</p></div><div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2022</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-11</p></div></div><div class='timeline-item-content'><p>C语言项目规范、统一编码风格。。。。。</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-12</p></div></div><div class='timeline-item-content'><p>error</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-13</p></div></div><div class='timeline-item-content'><p>error</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-14</p></div></div><div class='timeline-item-content'><p>error</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-15</p></div></div><div class='timeline-item-content'><p>error</p></div></div></div>]]></content>
+        <content type="html"><![CDATA[<h1 id="音乐播放器如雷贯耳的鼎鼎大名"><a href="#音乐播放器如雷贯耳的鼎鼎大名" class="headerlink" title="音乐播放器如雷贯耳的鼎鼎大名"></a>音乐播放器如雷贯耳的鼎鼎大名</h1><p>就叫玉玉云音乐播放器吧（组长起的名。。）</p><p><code>悄咪咪发布一手，这篇应该没人看的</code></p><h3 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h3><h3 id="项目记录"><a href="#项目记录" class="headerlink" title="项目记录"></a>项目记录</h3><div class="note danger flat"><p>项目时间戳</p></div><div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2022</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-11</p></div></div><div class='timeline-item-content'><p>C语言项目规范、统一编码风格。被说困了属于是。</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-12</p></div></div><div class='timeline-item-content'><p>初步实现播放&#x2F;暂停、循环播放、快进快退、倍速播放、自定义播放位置功能，对未来的功能添加开放了很多可扩展的接口</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-13</p></div></div><div class='timeline-item-content'><p>error</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-14</p></div></div><div class='timeline-item-content'><p>error</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>07-15</p></div></div><div class='timeline-item-content'><p>error</p></div></div></div><h3 id="项目基础"><a href="#项目基础" class="headerlink" title="项目基础"></a>项目基础</h3><p>基于windows的一款音乐播放器</p><p>采取mciSendString这个windows上的API，有关参数详情请参见文档</p><p>快速访问&#x3D;&#x3D;&gt;<a href="https://docs.microsoft.com/en-us/previous-versions/dd757161%28v=vs.85%29"><code>mciSendString文档传送门</code></a></p><p>API设计参考<a href="https://blog.csdn.net/qq_40571533/article/details/104393805">xiaoxiao涛的博客-CSDN博客_c++播放音乐</a></p><p>项目结构参考<a href="https://github.com/Cybercalf/HwcPlayer">Cybercalf&#x2F;HwcPlayer: 四川大学2021年暑期实训项目-音乐播放器 </a></p><h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><ul><li><p>基于Windows控制台C程序的音乐播放器其实是通过调用Windows上的一些API实现的，那就只需要通过函数对mciSendString传输字符串参数为命令控制Windows程序播放MP3文件。</p></li><li><p>基于这个想法，可以对音乐播放器的各个功能模块在原生API的基础上再加工，封装成一个个小demo，然后再做一个简陋的界面去操控。</p></li><li><p>那么一切合理了起来：也就是说相当于把各种本来要手打的命令行变成按钮或者键盘输入字符，按一下就往这里面输出一些命令，也就能实现音乐播放器了。</p></li><li><p>HwcPlayer中有一个很不错的点子，把要用的所有include全写在一个头文件里每个都引一次，很不错的想法，懒人必备噢。</p></li></ul><h4 id="一些自己的愚蠢问题"><a href="#一些自己的愚蠢问题" class="headerlink" title="一些自己的愚蠢问题"></a>一些自己的愚蠢问题</h4><ul><li><p>函数接收什么样的参数？</p></li><li><p>命令都是什么样的？</p></li><li><p>如何组合字符串成为一个命令？</p></li><li><p>如何读取文件并输入到播放列表中？</p></li><li><p>每一个功能需要几个API？</p></li><li><p>什么是alias别名？如何通过别名简化命令？</p></li><li><p>定义媒体播放位置的position怎么传？char* 还是 int ?</p></li><li><p>这些API尽可能多地能组成什么样的功能？</p></li></ul><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4>]]></content>
       
       
       <categories>
@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> 小项目 </tag>
+            
+            <tag> C/C++ </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> C/C++ </tag>
             
         </tags>
       
@@ -101,9 +101,9 @@
       
         <tags>
             
-            <tag> 小项目 </tag>
-            
             <tag> Java </tag>
+            
+            <tag> 小项目 </tag>
             
         </tags>
       
