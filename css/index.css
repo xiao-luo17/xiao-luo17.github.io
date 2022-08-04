@@ -3615,25 +3615,33 @@ h1.page-title + .tag-cloud-list {
   font-weight: bold;
   cursor: pointer;
 }
-#nav .menus_items {
+.menus_items {
+  position: absolute;
+  width: fit-content;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   display: inline;
 }
-#nav .menus_items .menus_item {
+.menus_items .menus_item {
   position: relative;
   display: inline-block;
   padding: 0 0 0 14px;
 }
-#nav .menus_items .menus_item:hover .menus_item_child {
+.menus_items .menus_item:hover .menus_item_child {
   display: block;
 }
-#nav .menus_items .menus_item:hover > a > i:last-child {
+.menus_items .menus_item:hover > a > i:last-child {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-#nav .menus_items .menus_item > a > i:last-child {
+.menus_items .menus_item > a > i:last-child {
   padding: 4px;
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
@@ -3641,7 +3649,7 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: -ms-transform 0.3s;
   transition: transform 0.3s;
 }
-#nav .menus_items .menus_item .menus_item_child {
+.menus_items .menus_item .menus_item_child {
   position: absolute;
   right: 0;
   display: none;
@@ -3658,7 +3666,7 @@ h1.page-title + .tag-cloud-list {
   animation: sub_menus 0.3s 0.1s ease both;
   border-radius: 5px;
 }
-#nav .menus_items .menus_item .menus_item_child:before {
+.menus_items .menus_item .menus_item_child:before {
   position: absolute;
   top: -8px;
   left: 0;
@@ -3666,49 +3674,49 @@ h1.page-title + .tag-cloud-list {
   height: 20px;
   content: '';
 }
-#nav .menus_items .menus_item .menus_item_child li {
+.menus_items .menus_item .menus_item_child li {
   list-style: none;
 }
-#nav .menus_items .menus_item .menus_item_child li:hover {
+.menus_items .menus_item .menus_item_child li:hover {
   background: var(--text-bg-hover);
 }
-#nav .menus_items .menus_item .menus_item_child li:first-child {
+.menus_items .menus_item .menus_item_child li:first-child {
   border-radius: 5px 5px 0 0;
 }
-#nav .menus_items .menus_item .menus_item_child li:last-child {
+.menus_items .menus_item .menus_item_child li:last-child {
   border-radius: 0 0 5px 5px;
 }
-#nav .menus_items .menus_item .menus_item_child li a {
+.menus_items .menus_item .menus_item_child li a {
   display: inline-block;
   padding: 8px 16px;
   width: 100%;
   color: var(--font-color) !important;
   text-shadow: none !important;
 }
-#nav.hide-menu #toggle-menu {
+.hide-menu #toggle-menu {
   display: inline-block !important;
 }
-#nav.hide-menu #toggle-menu .site-page {
+.hide-menu #toggle-menu .site-page {
   font-size: inherit;
 }
-#nav.hide-menu .menus_items {
+.hide-menu .menus_items {
   display: none;
 }
-#nav.hide-menu #search-button span {
+.hide-menu #search-button span {
   display: none;
 }
-#nav #search-button {
+#search-button {
   display: inline;
   padding: 0 0 0 14px;
 }
-#nav .site-page {
+.site-page {
   position: relative;
   padding-bottom: 6px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   font-size: 0.78em;
   cursor: pointer;
 }
-#nav .site-page:not(.child):after {
+.site-page:not(.child):after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3723,7 +3731,7 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#nav .site-page:not(.child):hover:after {
+.site-page:not(.child):hover:after {
   width: 100%;
 }
 .loading-bg,
@@ -6253,4 +6261,13 @@ blockquote.pullquote.right {
     padding-bottom: 40px;
     max-height: 75vh !important;
   }
+}
+::-webkit-scrollbar-thumb {
+/*分割为四部分，以两种不同颜色区分*/
+  background-image: -webkit--webkit-linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  background-image: -webkit--moz-linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  background-image: -webkit--o-linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  background-image: -webkit--ms-linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  background-image: -webkit-linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
+  border-radius: 2em; /*圆角*/
 }
