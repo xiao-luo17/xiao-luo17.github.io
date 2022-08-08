@@ -3262,17 +3262,46 @@ h1.page-title + .tag-cloud-list {
   background-color: rgba(0,0,0,0.5);
   content: '';
 }
+#footer-info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border: 1px solid #fff;
+  padding-top: 10px;
+  border-width: 0;
+  border-top-width: 1.5px;
+}
+#footer-info #nav-page {
+  float: right;
+}
 #footer-wrap {
   position: relative;
   padding: 40px 20px;
   color: var(--light-grey);
   text-align: center;
 }
+#footer-wrap .copyright {
+  padding-left: 50px;
+  padding-right: 30px;
+}
+#footer-wrap .framework-info {
+  padding-right: 30px;
+}
 #footer-wrap a {
   color: var(--light-grey);
 }
 #footer-wrap a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #f08080;
 }
 #footer-wrap .footer-separator {
   margin: 0 4px;
@@ -3282,6 +3311,55 @@ h1.page-title + .tag-cloud-list {
   max-height: 1.4em;
   width: auto;
   vertical-align: text-bottom;
+}
+#footer-navlog {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 2px 1rem;
+}
+.group-title {
+  text-align: left;
+  font-size: 1.4rem;
+  color: var(--light-grey);
+}
+.group-title:hover {
+  color: #f08080;
+}
+.group-links {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-right: auto;
 }
 #page-header {
   position: relative;
