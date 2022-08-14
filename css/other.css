@@ -1,0 +1,217 @@
+/* #################### å…¨å±€ #################### */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+nav {
+	height: 50px;
+	background: #b9e1b1;
+}
+
+#content {
+	height: 100%;
+	padding-left: 200px;
+	padding-right: 200px;
+	background: #f9f7ed;
+}
+/* #################### å…¨å±€ #################### */
+
+/* #################### æ–‡ç«  #################### */
+/* ä½œè€… æ—¶é—´ ç›¸å…³ */
+#post-author {
+	font-size: 9px;
+	position: absolute;
+	top: 60px;
+	right: 30px;
+	color: #999;
+}
+
+#post-date {
+	font-size: 9px;
+	position: absolute;
+	top: 80px;
+	right: 30px;
+	color: #999;
+}
+
+/* æ–‡ç« å„ä¸ªå…ƒç´ é—´éš” */
+#article {
+	padding: 50px 30px;
+}
+#article * {
+	margin: 30px 0;
+}
+
+
+#article ol,
+#article ul {
+	padding-left: 40px;
+	line-height: 5px;
+	margin: 20px 0;
+}
+
+#article li {
+	margin: 20px 0;
+}
+
+#article h1,
+#article h2,
+#article h3,
+#article h4,
+#article h5,
+#article h6 {
+	line-height: 40px;
+	margin: 20px 0 15px;
+}
+
+#article h1 {
+	font-size: 32px;
+	font-weight: 900;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #e06c75;
+}
+
+#article h2 {
+	font-size: 25px;
+	border-left: 3px solid #73b1e0;
+	padding-left: 10px;
+}
+
+#article h3 {
+	font-size: 22px
+}
+
+#article a {
+	color: #e06c75;
+	text-decoration: none;
+}
+
+#article a:hover {
+	border-bottom: 1px solid;
+}
+
+#article h1 a:hover{
+	border-bottom: none;
+}
+
+#article code {
+	border-radius: 3px;
+	box-shadow: 0px 0px 5px #999;
+}
+
+#article img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px #999;
+}
+
+#article pre {
+	font-size: 14px;
+	margin: 20px 0 15px;
+}
+
+#article p {
+	margin: 0 0 10px;
+	line-height: 30px
+}
+
+/* è¡¨æ ¼å¤„ç† */
+#article table {
+  width: 100%;
+  border: 0;
+  margin: 20px 0 50px 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 35px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px #999;
+}
+
+#article table th {
+  background: #73b1e0;
+  font-weight: 800;
+  font-size: 18px;
+  text-align: left;
+  line-height: 35px;
+  color: #FFF;
+}
+
+#article table tr:nth-child(odd) {
+  background: #F4F4F4;
+}
+
+#article table tr:hover,
+#article table td:hover {
+  background: #badbf5;
+  color: #FFF;
+}
+
+#article table td, table th {
+  padding: 5px 20px 5px 20px
+}
+
+#article table tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+
+#article table tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+
+#article table tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+#article table tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+/* #################### æ–‡ç«  #################### */
+/* #################### è‡ªé€‚åº” #################### */
+
+/* å½“æµè§ˆå™¨çª—å£ä¸è¶…è¿‡æœ€å¤§800pxæ—¶(æ„æ€å°±æ˜¯å°äºŽ800pxæ—¶) */
+
+@media screen and (max-width: 800px) {
+	aside {
+		display: none;
+	}
+
+	#content {
+		padding-left: 0;
+	}
+
+	canvas#live2dcanvas {
+		display: none;
+	}
+}
+
+/*ç«–å±*/
+@media all and (orientation : portrait) {
+
+	aside {
+		display: none;
+	}
+
+	#content {
+		padding-left: 0;
+	}
+
+	canvas#live2dcanvas {
+		display: none;
+	}
+
+}
+
+/* #################### è‡ªé€‚åº” #################### */
+
+
+
+
