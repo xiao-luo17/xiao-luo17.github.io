@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>操作系统概述 | 小罗の小窝</title><meta name="author" content="Xiao Luo"><meta name="copyright" content="Xiao Luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="#article-container h1{         text-align: center;         border-bottom: solid 3px #F08080;     }   Basic Elements（基本组成元素） Processor（处理器）  Main Memory（内存） 称为实际内存（实存 real memory）或主存（primary memor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="操作系统概述">
+<meta property="og:url" content="http://example.com/notebook/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html">
+<meta property="og:site_name" content="小罗の小窝">
+<meta property="og:description" content="#article-container h1{         text-align: center;         border-bottom: solid 3px #F08080;     }   Basic Elements（基本组成元素） Processor（处理器）  Main Memory（内存） 称为实际内存（实存 real memory）或主存（primary memor">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-09-07T16:11:16.562Z">
+<meta property="article:modified_time" content="2022-09-07T16:11:16.562Z">
+<meta property="article:author" content="Xiao Luo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="http://example.com/notebook/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":400,"position":"top","messagePrev":"这篇文章已经有","messageNext":"天没有更新过了, 可能有一些错误, 可以去小窝其他地方看看噢."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Xiao Luo","link":"链接: ","source":"来源: 小罗の小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#F08080","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统概述',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-08 00:11:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/iconfont/font_01/iconfont.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 休息室</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-fish"></i><span> 摸鱼</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://guozhivip.com/fun/2048/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 2048</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.minesweeper.cn/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 扫雷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.ip33.com/rubik/index.html"><i class="fa-fw fa-solid fa-gamepad"></i><span> 3D魔方</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xiabor.com/mikutap/"><i class="fa-fw fa-solid fa-gamepad"></i><span> Mikutap</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xiabor.com/dot/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 动态字符</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw iconfont icon-dakaixinxi"></i><span> 信箱</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: transparent"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小罗の小窝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 休息室</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-fish"></i><span> 摸鱼</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://guozhivip.com/fun/2048/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 2048</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.minesweeper.cn/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 扫雷</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.ip33.com/rubik/index.html"><i class="fa-fw fa-solid fa-gamepad"></i><span> 3D魔方</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xiabor.com/mikutap/"><i class="fa-fw fa-solid fa-gamepad"></i><span> Mikutap</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xiabor.com/dot/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 动态字符</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw iconfont icon-dakaixinxi"></i><span> 信箱</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">操作系统概述</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><style>
+    #article-container h1{
+        text-align: center;
+        border-bottom: solid 3px #F08080;
+    }
+</style>
+
+<h1 id="Basic-Elements（基本组成元素）"><a href="#Basic-Elements（基本组成元素）" class="headerlink" title="Basic Elements（基本组成元素）"></a>Basic Elements（基本组成元素）</h1><ul>
+<li><p><strong>Processor（处理器）</strong></p>
+</li>
+<li><p><strong>Main Memory（内存）</strong></p>
+<p>称为实际内存（实存 real memory）或主存（primary memory）</p>
+</li>
+<li><p><strong>I/O modules（输入输出模块）</strong></p>
+<p>次级存储设备（磁盘）</p>
+<p>通信设备</p>
+<p>终端</p>
+</li>
+<li><p><strong>System bus（系统总线）</strong></p>
+<p>处理器、内存和 I/O 模块间的通信</p>
+</li>
+</ul>
+<h1 id="Prcessor-Registers（CPU-寄存器）"><a href="#Prcessor-Registers（CPU-寄存器）" class="headerlink" title="Prcessor Registers（CPU 寄存器）"></a>Prcessor Registers（CPU 寄存器）</h1><blockquote>
+<p><strong>存在于CPU的内存，启用CPU以最小化主存引用。CPU寄存器保持位置或内存的小数据，并且是处理器的一个组成部分。</strong></p>
+<p><strong>是一种非常快速的计算机存储器，主要用于非常快速地执行程序和其他主要操作。</strong></p>
+<p><strong>处理器层次：CPU &lt;= =&gt; 寄存器 &lt;= =&gt; 缓存 &lt;= =&gt; 内存</strong></p>
+</blockquote>
+<h2 id="CPU-寄存器的操作"><a href="#CPU-寄存器的操作" class="headerlink" title="CPU 寄存器的操作"></a>CPU 寄存器的操作</h2><ul>
+<li><p>当我们提供输入时，这些被存储并存储在寄存器进程中，并且输出仅来自寄存器。</p>
+<p>因此，基本上寄存器将执行以下操作。</p>
+<ul>
+<li><strong>获取</strong>：获取用户的指令以及以排序方式存在于主内存中的指令</li>
+<li><strong>解码</strong>：第二个操作是对需要执行的指令进行解码。因此，CPU 将知道指令是什么</li>
+<li><strong>执行</strong>：一旦指令被解码，CPU 就会执行执行操作。完成后，结果将显示在用户屏幕上</li>
+</ul>
+</li>
+</ul>
+<div class="note info flat"><p>下面是两类 CPU 寄存器</p>
+</div>
+<h2 id="1-User-Visible-Registers（用户可见寄存器）"><a href="#1-User-Visible-Registers（用户可见寄存器）" class="headerlink" title="1. User-Visible Registers（用户可见寄存器）"></a>1. User-Visible Registers（用户可见寄存器）</h2><p>可以被机器语言访问存取，可用于所有程序（应用程序/系统程序）</p>
+<h2 id="2-Control-and-Status-Registers（控制和状态寄存器）"><a href="#2-Control-and-Status-Registers（控制和状态寄存器）" class="headerlink" title="2. Control and Status Registers（控制和状态寄存器）"></a>2. Control and Status Registers（控制和状态寄存器）</h2><p>大多数用户不可见，用于控制处理器的操作</p>
+<ul>
+<li><p><strong>PC计数器 Program Counter：</strong>包含下一条指令的地址</p>
+<p>寄存器将保存需要获取和执行或执行的下一条指令的地址。当指令被获取时，该值将递增，因此将始终保存要运行的下一条指令的地址。</p>
+</li>
+<li><p><strong>IR指令寄存器 Instruction Registers：</strong>包含最近获取的指令</p>
+<p>一旦从主存储器中获取指令，它就会存储在指令寄存器 IR 中。控制单元从这里获取指令对其进行解码，并通过向所需组件发送所需信号来执行它。</p>
+</li>
+<li><p><strong>Program Status Word (PSW) ：</strong>运行状态字</p>
+<ul>
+<li><p>Interrupt enable/disable（中断启用/禁用）</p>
+<p>……</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p> 所有的处理器设计还包括一个或一组寄存器，通常称为程序状态字(Program Status Word,PSW )，它包含状态信息。PSW 通常包含条件码和其他状态信息，如中断允许/禁止位和内核/用户态位。 条件码( condition code，也称为标记)是处理器硬件为操作结果设置的位。例如，算术运算可能产生正数、负数、零或溢出的结果，除了结果自身存储在一个寄存器或存储器中之外，在算术指令执行之后，也随之设置一个条件码。这个条件码之后可作为条件分支运算的一部分被测试。条件码位被收集到一个或多个寄存器中，通常它们构成了控制寄存器的一部分。机器指令通常允许通过隐式访问来读取这些位，但不能通过显式访问进行修改，这是因为它们是为指令执行结果的反馈而设计的。</p>
+</blockquote>
+<h1 id="Instruction-Execution（指令执行）"><a href="#Instruction-Execution（指令执行）" class="headerlink" title="Instruction Execution（指令执行）"></a>Instruction Execution（指令执行）</h1><blockquote>
+<p><strong>取址 =&gt; 译码 =&gt; 执行 =&gt; 取址 =&gt; 译码 =&gt; 执行 =&gt; ……</strong></p>
+<p><strong>CPU 的程序计数器（PC）保存下一个要获取的指令的地址 获取的指令放置在指令寄存器（IR）中 每次取出后 CPU 的程序计数器 （PC） 递增</strong></p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="img/study/OS-1.jpg" alt="OS-1"></p>
+<ul>
+<li><p><strong>执行过程</strong></p>
+<p>CPU 的程序计数器（PC）保存接下来要获取的指令的地址，取出的指令放在指令寄存器（IR）中，每次取出后程序计数器（PC）都会增加</p>
+</li>
+<li><p><strong>指令周期</strong></p>
+<p>执行单个指令需要的执行过程——取出并执行，不同指令的指令周期不同，由若干机器周期来表示</p>
+</li>
+<li><p><strong>指令的执行阶段</strong></p>
+<p>单指令周期</p>
+</li>
+</ul>
+<h1 id="Interrupts（中断）"><a href="#Interrupts（中断）" class="headerlink" title="Interrupts（中断）"></a>Interrupts（中断）</h1><p>其他模块（I/O，时钟等）可能会中断处理器任务的正常排序，从而使 CPU 具有异步处理的能力。I/O 设备可以停止 CPU 运行以提供一些必要的服务</p>
+<h2 id="为什么需要中断"><a href="#为什么需要中断" class="headerlink" title="为什么需要中断"></a>为什么需要中断</h2><ul>
+<li>大多数的 I/O 设备都比处理器慢，中断可以提高 CPU 使用率（improve CPU’s utilization），使处理器不必暂停等待设备</li>
+<li>避免 CPU 被程序独占</li>
+</ul>
+<h2 id="中断与指令周期"><a href="#中断与指令周期" class="headerlink" title="中断与指令周期"></a>中断与指令周期</h2><h2 id="中断处理"><a href="#中断处理" class="headerlink" title="中断处理"></a>中断处理</h2><h2 id="多次中断"><a href="#多次中断" class="headerlink" title="多次中断"></a>多次中断</h2><h2 id="进程并发"><a href="#进程并发" class="headerlink" title="进程并发"></a>进程并发</h2><h1 id="The-Memory-Hierarchy（内存层次结构）"><a href="#The-Memory-Hierarchy（内存层次结构）" class="headerlink" title="The Memory Hierarchy（内存层次结构）"></a>The Memory Hierarchy（内存层次结构）</h1><blockquote>
+<p>获得更大的存储容量意味着更慢的访问速度和便宜的价格</p>
+<p>更快的访问速度有较小的容量和较高的价格</p>
+<p>板上存储器 ==&gt; 板外存储器 ==&gt; 离线存储器<strong>（从左向右增加访问时间、提升容量、降低单位成本）</strong></p>
+<p>处理器与内存层次：<strong>CPU &lt;= =&gt; 寄存器 &lt;= =&gt; 缓存 &lt;= =&gt; 内存 &lt;= =&gt; ……</strong></p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="img/OS-2.jpg" alt="OS-2"></p>
+<p>使用内存层次结构有效地组织内存：</p>
+<ul>
+<li><p><strong>Smaller, more expensive, faster memories are supplemented (后备) by larger, cheaper, slower memories</strong></p>
+<blockquote>
+<p>更小、更昂贵、更快的记忆被更大、更便宜、更慢的记忆所补充（后备）</p>
+</blockquote>
+</li>
+<li><p><strong>Larger, cheaper, slower memories are cached（缓存） by Smaller, more expensive, faster memories</strong> </p>
+<blockquote>
+<p>更大，更便宜，更慢的内存被更小，更昂贵，更快的内存缓存（缓存）</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Locality-of-reference-访问局部性-局部性原理-principle-of-locality"><a href="#Locality-of-reference-访问局部性-局部性原理-principle-of-locality" class="headerlink" title="Locality of reference(访问局部性/局部性原理/principle of locality)"></a>Locality of reference(访问局部性/局部性原理/principle of locality)</h2><ul>
+<li><p><strong>Spatial locality (空间局部性)</strong></p>
+</li>
+<li><p><strong>Temporal locality (时间局部性)</strong></p>
+</li>
+</ul>
+<h1 id="Cache-Memory（高速缓存）"><a href="#Cache-Memory（高速缓存）" class="headerlink" title="Cache Memory（高速缓存）"></a>Cache Memory（高速缓存）</h1><h1 id="I-O-Communication-（I-O通信）"><a href="#I-O-Communication-（I-O通信）" class="headerlink" title="I/O Communication （I/O通信）"></a>I/O Communication （I/O通信）</h1></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><!--if theme.footer.custom_text--><!--  .footer_custom_text!=`${theme.footer.custom_text}`--><div class="spinner">
+<span>你</span>
+<span>好</span>
+<span>呀</span>
+<span>~</span>
+<span>欢</span>
+<span>迎</span>
+<span>光</span>
+<span>临</span>
+<span>小</span>
+<span>罗</span>
+<span>の</span>
+<span>小</span>
+<span>窝</span>
+</div>
+<div id="footer-navlog">
+<div class="navlog-group">
+<div class="group-title">
+<h2 class="group-title">网站</h2>
+</div>
+<div class="group-links">
+<a class="link-item" target="_Self" href="/about/">关于站长</a>
+<a class="link-item" target="_Self" href="/comments/">留言信箱</a>
+<a class="link-item" target="_Self" href="/link/">友情链接</a>
+<a class="link-item" target="_Self" href="https://xiao-luo17.github.io/xiao-luo17/">导航站</a>
+</div>
+</div>
+<div class="navlog-group">
+<div class="group-title">
+<h2 class="group-title">休息室</h2>
+</div>
+<div class="group-links">
+<a class="link-item" target="_Self" href="/music/">我的音乐</a>
+<a class="link-item" target="_Self" href="/bangumis/">我的番剧</a>
+</div>
+</div>
+<div class="navlog-group">
+<div class="group-title">
+<h2 class="group-title">文章</h2>
+</div>
+<div class="group-links">
+<a class="link-item" target="_Self" href="/archives/">日期归档</a>
+<a class="link-item" target="_Self" href="/categories/">文章分类</a>
+<a class="link-item" target="_Self" href="/tags/">主题标签</a>
+<a class="link-item" target="_Self" href="/notebook/">Notebook</a>
+</div>
+</div>
+<div class="navlog-group">
+<div class="group-title">
+<h2 class="group-title">咕哇咕哇</h2>
+</div>
+<div class="group-links">
+<a class="link-item" target="_Self" href="https://xiao-luo17.github.io/music/">啥也没有</a>
+<a class="link-item" target="_Self" href="https://xiao-luo17.github.io/bangumis/">啥也没有</a>
+</div>
+</div>
+<div class="navlog-group">
+<div class="group-title">
+<h2 class="group-title">咕哇咕哇</h2>
+</div>
+<div class="group-links">
+<a class="link-item" target="_Self" href="https://xiao-luo17.github.io/music/">啥也没有</a>
+<a class="link-item" target="_Self" href="https://xiao-luo17.github.io/bangumis/">啥也没有</a>
+</div>
+</div>
+</div>
+<div id="footer-info"><div class="copyright">&copy;2021 - 2022 By Xiao Luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><a href="https://icp.gov.moe/?keyword=20222301" target="_blank">萌ICP备20222301号</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="/iconfont/font_01/iconfont.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":250,"height":340},"mobile":{"show":false},"react":{"opacity":1}});</script></body></html>
